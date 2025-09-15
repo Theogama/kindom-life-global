@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kingdom Life Global Design System - Regal, Modern, Inspiring */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    
+    /* Royal Blue - Primary Brand */
+    --primary: 225 73% 57%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 225 83% 47%;
+    
+    /* Gold - Accent & Luxury */
+    --gold: 45 100% 51%;
+    --gold-light: 48 100% 67%;
+    --gold-dark: 42 100% 45%;
+    
+    /* Secondary & Supporting */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 9% 46%;
+    
+    /* Utility Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 225 73% 57%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Design System Extensions */
+    --hero-gradient: linear-gradient(135deg, hsl(225 73% 57% / 0.95), hsl(225 83% 47% / 0.95));
+    --gold-gradient: linear-gradient(135deg, hsl(45 100% 51%), hsl(42 100% 45%));
+    --royal-gradient: linear-gradient(135deg, hsl(225 73% 57%), hsl(225 83% 47%));
+    
+    /* Shadows & Effects */
+    --shadow-royal: 0 10px 40px hsl(225 73% 57% / 0.15);
+    --shadow-gold: 0 10px 40px hsl(45 100% 51% / 0.15);
+    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.1);
+    
+    /* Typography Scale */
+    --text-hero: 3.5rem;
+    --text-xl: 2.25rem;
+    --text-lg: 1.5rem;
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-overlay {
+    background: linear-gradient(135deg, 
+      rgba(0, 0, 0, 0.7) 0%, 
+      rgba(0, 0, 0, 0.4) 50%, 
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  
+  /* Gold Gradient Button */
+  .btn-gold {
+    background: var(--gold-gradient);
+    box-shadow: var(--shadow-gold);
+    transition: var(--transition-smooth);
+  }
+  
+  /* Royal Blue Gradient Button */
+  .btn-royal {
+    background: var(--royal-gradient);
+    box-shadow: var(--shadow-royal);
+    transition: var(--transition-smooth);
+  }
+  
+  /* Section Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Elegant Cards */
+  .church-card {
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+  
+  .church-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-royal);
+  }
+}
